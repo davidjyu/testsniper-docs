@@ -57,7 +57,7 @@ A background scheduler polls target URLs on a configurable interval. When a slot
 
 - **Polling over webhooks**: Target platforms don't expose event APIs, so the poller fetches and diffs slot state on each cycle. Interval and concurrency limits are tuned per-target to stay within acceptable request rates.
 - **State diffing in the DB**: Slot availability is stored per-check, so the system can detect transitions (unavailable to available) reliably across restarts without holding state in memory.
-- **Containerised deployment**: Each service (API, poller, notifier, DB) runs as its own Docker container, making it easy to scale, restart, or replace components independently. Images are built and pushed automatically via GitHub Actions on every push to the private repo.
+- **Containerised deployment**: The frontend, backend, and PostgreSQL database each run as their own Docker container, making it easy to scale, restart, or replace components independently. Images are built and pushed automatically via GitHub Actions on every push to the private repo.
 - **Async-first backend**: FastAPI with async endpoints keeps the API responsive under load even when the poller and notifier are running concurrently in the same process space.
 
 ---
