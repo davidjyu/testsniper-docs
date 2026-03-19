@@ -62,10 +62,4 @@ A background scheduler polls target URLs on a configurable interval. When a slot
 
 ---
 
-### Live Site
-
-**[testsniper.net](https://testsniper.net)**
-
----
-
 *Source is maintained in a private repository.*
